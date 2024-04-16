@@ -14,13 +14,13 @@ dependencies:
   #########################
   #########################
   dio: ^5.4.3+1 # 网络请求
-  get: ^4.6.6 # 状态管理
+#  get: ^4.6.6 # 状态管理
   getwidget: ^4.0.0 # UI控件
   shared_preferences: ^2.2.3 # 配置文件
-  package_info_plus: ^7.0.0 # 应用信息
+  package_info_plus: ^5.0.1 # 应用信息
   cached_network_image: ^3.3.1 # 网络图片
   connectivity_plus: ^6.0.2 # 网络状态
-  device_info_plus: ^10.0.0 # 设备信息
+  device_info_plus: ^9.1.2 # 设备信息
   flutter_screenutil: ^5.9.0 # 屏幕适配
   url_launcher: ^6.2.5 # 打开浏览器
   logger: ^2.2.0 # 日志
