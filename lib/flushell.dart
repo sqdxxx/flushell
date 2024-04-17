@@ -1,22 +1,20 @@
 library flushell;
 
-import 'package:flushell/database/shared_preferences_table.dart';
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+import 'package:cool_alert/cool_alert.dart';
+import 'package:flushell/ui/alert.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 final sh = Shell();
 
 class Shell {
 
-  Shell () {
+  late SharedPreferences pref;
+  Alert alert = Alert();
 
+  initialize() async {
+    pref = await SharedPreferences.getInstance();
   }
-
 
   show() {
     print("shell ok");
