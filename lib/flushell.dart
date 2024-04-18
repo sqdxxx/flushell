@@ -1,6 +1,7 @@
 library flushell;
 
 import 'package:cool_alert/cool_alert.dart';
+import 'package:flushell/analytics.dart';
 import 'package:flushell/ui/alert.dart';
 import 'package:flushell/ui/color.dart';
 import 'package:flushell/ui/toast.dart';
@@ -23,11 +24,14 @@ class Shell {
   Toast toast = Toast();
   ColorUtil colors = ColorUtil();
   late Env env;
+  late Analytics analytics;
 
   initialize({required Env env}) async {
+    this.env = env;
+
     pref = await SharedPreferences.getInstance();
     packageInfo = await PackageInfo.fromPlatform();
-    this.env = env;
+    analytics = Analytics();
   }
 
   show() {
@@ -40,5 +44,7 @@ class Env {
   String icp;
   String agreementUrl;
   String privateUrl;
-  Env({required this.icp, required this.agreementUrl, required this.privateUrl});
+  String? analyticsKeyAndroid;
+  String? analyticsKeyIOS;
+  Env({required this.icp, required this.agreementUrl, required this.privateUrl, this.analyticsKeyAndroid, this.analyticsKeyIOS});
 }
