@@ -25,7 +25,7 @@ class _WebViewPageState extends State<WebViewPage> {
       ),
 
       body: SafeArea(
-
+        bottom: false,
         child: WebView(
           initialUrl: widget.url,
           javascriptMode: JavascriptMode.unrestricted, // 允许JavaScript执行
