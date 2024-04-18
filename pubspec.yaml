@@ -28,6 +28,7 @@ dependencies:
   webview_flutter: ^2.0.13 # webview
   toastification: ^1.2.1
   umeng_common_sdk: ^1.2.7
+  flutter_svprogresshud: ^1.0.1
 #  styled_widget: ^0.4.1 # 自定义组件
 #  permission_handler: ^11.3.1
 #  flutter_ume: ^1.1.2

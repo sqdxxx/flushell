@@ -2,9 +2,18 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_svprogresshud/flutter_svprogresshud.dart';
 import 'package:toastification/toastification.dart';
 
 class Toast {
+
+  loading() {
+    SVProgressHUD.show();
+  }
+  dismiss() {
+    SVProgressHUD.dismiss();
+    toastification.dismissAll();
+  }
 
   success(BuildContext context, String message) {
 

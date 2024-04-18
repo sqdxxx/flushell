@@ -1,4 +1,5 @@
 
+import 'package:flutter/foundation.dart';
 import 'package:umeng_common_sdk/umeng_common_sdk.dart';
 
 import 'flushell.dart';
@@ -7,12 +8,18 @@ import 'flushell.dart';
 class Analytics {
 
   Analytics() {
-    UmengCommonSdk.initCommon(sh.env.analyticsKeyAndroid??"", sh.env.analyticsKeyIOS??"", "AppStore");
+    if (kReleaseMode) {
+      UmengCommonSdk.initCommon(sh.env.analyticsKeyAndroid??"", sh.env.analyticsKeyIOS??"", "AppStore");
+    }
   }
 
 
   /// 日志
   void event(String name, [Map<String, dynamic>? params]) async{
+
+    if (kDebugMode) {
+      return;
+    }
 
     try {
 
